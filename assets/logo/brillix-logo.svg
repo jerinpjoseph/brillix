@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80" fill="none">
+  <!-- BT Icon - Rounded tag shape -->
+  <rect x="2" y="8" width="64" height="64" rx="16" fill="#6FA0BB" transform="rotate(-5 34 40)"/>
+  <text x="20" y="52" font-family="Arial, sans-serif" font-weight="bold" font-size="32" fill="#FFFFFF" letter-spacing="1">BT</text>
+  <!-- Brillix Technologies text -->
+  <text x="82" y="52" font-family="Arial, sans-serif" font-weight="600" font-size="34" fill="#6FA0BB" letter-spacing="1.5">Brillix Technologies</text>
+</svg>

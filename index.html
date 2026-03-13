@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brillix Technologies — Seamless Data, Brilliant Outcomes</title>
+  <meta name="description" content="Brillix Technologies builds modern web platforms, scalable SaaS products, AI powered systems, and enterprise digital solutions.">
+  <meta name="keywords" content="Brillix Technologies, web development, SaaS, AI solutions, cloud infrastructure, software development, enterprise solutions, Thrissur, Kerala">
+  <meta name="author" content="Brillix Technologies">
+  <meta name="theme-color" content="#0B0F14">
+  <link rel="canonical" href="https://brillixtechnologies.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Brillix Technologies — Seamless Data, Brilliant Outcomes">
+  <meta property="og:description" content="We build modern web platforms, scalable SaaS products, AI powered systems, and enterprise digital solutions.">
+  <meta property="og:image" content="https://brillixtechnologies.com/assets/images/social-preview.svg">
+  <meta property="og:url" content="https://brillixtechnologies.com/">
+  <meta property="og:site_name" content="Brillix Technologies">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Brillix Technologies — Seamless Data, Brilliant Outcomes">
+  <meta name="twitter:description" content="We build modern web platforms, scalable SaaS products, AI powered systems, and enterprise digital solutions.">
+  <meta name="twitter:image" content="https://brillixtechnologies.com/assets/images/social-preview.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/favicon.svg">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Brillix Technologies",
+    "url": "https://brillixtechnologies.com",
+    "logo": "https://brillixtechnologies.com/assets/logo/brillix-logo.svg",
+    "description": "Brillix Technologies builds modern web platforms, scalable SaaS products, AI powered systems, and enterprise digital solutions.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9744004523",
+      "contactType": "customer service",
+      "email": "jerinpjpositive@gmail.com",
+      "areaServed": "Worldwide"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Thrissur",
+      "addressRegion": "Kerala",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/brillix-technologies",
+      "https://twitter.com/brillixtech",
+      "https://github.com/brillix-technologies"
+    ]
+  }
+  </script>
+
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6FA0BB',
+            secondary: '#4F7F9A',
+            accent: '#00D4FF',
+            dark: '#0B0F14',
+            'dark-light': '#111820',
+            muted: '#A0A0A0',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-dark text-white font-sans overflow-x-hidden">
+
+  <!-- ===== CUSTOM CURSOR ===== -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- ===== GLOBAL PARTICLE BACKGROUND ===== -->
+  <canvas id="global-canvas"></canvas>
+
+  <!-- ===== LOADER ===== -->
+  <div id="loader">
+    <div id="loader-logo">BT</div>
+    <p id="loader-text">Loading</p>
+    <div id="loader-bar">
+      <div id="loader-bar-inner"></div>
+    </div>
+  </div>
+
+  <!-- ===== SCROLL PROGRESS ===== -->
+  <div id="scroll-progress"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="#hero" class="flex items-center gap-3 group relative z-10">
+          <div class="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center text-white font-bold text-sm transition-all duration-500 group-hover:shadow-lg group-hover:shadow-accent/20 group-hover:scale-110" style="transform: rotate(-5deg);">
+            BT
+          </div>
+          <span class="text-lg font-semibold text-white tracking-wide hidden sm:block">
+            Brillix <span class="text-primary">Technologies</span>
+          </span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#hero" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="blog.html" class="nav-link">Blog</a>
+          <a href="careers.html" class="nav-link">Careers</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <button id="menu-btn" class="hamburger md:hidden flex flex-col gap-1.5 p-2 cursor-pointer z-10" aria-label="Toggle menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden pb-6 px-2">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="careers.html">Careers</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Three.js Morphing Sphere Canvas -->
+    <canvas id="hero-canvas" class="absolute inset-0 w-full h-full"></canvas>
+
+    <!-- Aurora Glow -->
+    <div class="aurora"></div>
+
+    <!-- Floating parallax orbs -->
+    <div class="glow-orb absolute top-1/3 left-1/5 w-[500px] h-[500px] bg-primary opacity-[0.06]" data-parallax="0.15"></div>
+    <div class="glow-orb absolute bottom-1/4 right-1/5 w-[400px] h-[400px] bg-accent opacity-[0.04]" data-parallax="-0.1"></div>
+
+    <!-- Content -->
+    <div class="hero-content relative z-10 text-center max-w-5xl mx-auto px-6">
+      <!-- Dark backdrop for readability -->
+      <div class="absolute inset-0 -mx-12 -my-16 bg-gradient-to-b from-dark/60 via-dark/40 to-dark/60 rounded-3xl blur-2xl pointer-events-none"></div>
+
+      <div class="relative z-10">
+      <div class="hero-badge mb-8">
+        Next-Gen Technology Solutions
+      </div>
+
+      <!-- Apple-style split-line heading -->
+      <h1 class="hero-heading text-5xl md:text-6xl lg:text-[4.5rem] font-bold leading-[1.08] mb-6 tracking-tight" style="text-shadow: 0 2px 30px rgba(11,15,20,0.8), 0 0 60px rgba(11,15,20,0.5);">
+        <div class="text-reveal-line"><span>Brillix Technologies</span></div>
+        <div class="text-reveal-line"><span>For </span><span class="gradient-text">Modern</span></div>
+        <div class="text-reveal-line"><span class="gradient-text">Businesses</span></div>
+      </h1>
+
+      <p class="hero-subtitle text-lg md:text-xl text-muted max-w-2xl mx-auto mb-3 leading-relaxed" style="text-shadow: 0 2px 20px rgba(11,15,20,0.9);">
+        Seamless Data, Brilliant Outcomes
+      </p>
+
+      <p class="hero-desc text-base text-muted/60 max-w-xl mx-auto mb-12" style="text-shadow: 0 2px 20px rgba(11,15,20,0.9);">
+        We build modern web platforms, scalable SaaS products, AI powered systems, and enterprise digital solutions.
+      </p>
+
+      <div class="hero-buttons flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#contact" class="btn-primary">
+          <span>Get Started</span>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="#services" class="btn-outline">
+          <span>View Services</span>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </a>
+      </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <div class="mouse"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="relative py-28 lg:py-36 overflow-hidden">
+    <div class="aurora"></div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+        <!-- Left Content -->
+        <div>
+          <div class="section-badge reveal">About Us</div>
+          <h2 class="section-heading section-heading-animate text-4xl md:text-5xl font-bold mb-8 tracking-tight">
+            About <span class="gradient-text">Brillix Technologies</span>
+          </h2>
+
+          <!-- Apple-style word-by-word opacity reveal -->
+          <div class="about-text-animate text-lg text-muted leading-relaxed mb-6">
+            <span class="word-span">Brillix</span> <span class="word-span">Technologies</span> <span class="word-span">is</span> <span class="word-span">a</span> <span class="word-span">forward</span> <span class="word-span">thinking</span> <span class="word-span">technology</span> <span class="word-span">company</span> <span class="word-span">focused</span> <span class="word-span">on</span> <span class="word-span">building</span> <span class="word-span">scalable</span> <span class="word-span">software</span> <span class="word-span">systems,</span> <span class="word-span">AI</span> <span class="word-span">powered</span> <span class="word-span">solutions,</span> <span class="word-span">modern</span> <span class="word-span">SaaS</span> <span class="word-span">platforms,</span> <span class="word-span">and</span> <span class="word-span">high</span> <span class="word-span">performance</span> <span class="word-span">web</span> <span class="word-span">applications.</span>
+          </div>
+
+          <p class="about-text-animate text-muted/60 leading-relaxed mb-10">
+            <span class="word-span">We</span> <span class="word-span">combine</span> <span class="word-span">cutting-edge</span> <span class="word-span">technology</span> <span class="word-span">with</span> <span class="word-span">deep</span> <span class="word-span">industry</span> <span class="word-span">expertise</span> <span class="word-span">to</span> <span class="word-span">deliver</span> <span class="word-span">solutions</span> <span class="word-span">that</span> <span class="word-span">transform</span> <span class="word-span">businesses.</span>
+          </p>
+
+          <!-- Stats -->
+          <div class="grid grid-cols-3 gap-6 reveal">
+            <div class="glass-glow rounded-xl p-5 text-center">
+              <div class="stat-number text-3xl font-bold text-accent mb-1" data-target="50">0+</div>
+              <div class="text-sm text-muted">Projects</div>
+            </div>
+            <div class="glass-glow rounded-xl p-5 text-center">
+              <div class="stat-number text-3xl font-bold text-accent mb-1" data-target="30">0+</div>
+              <div class="text-sm text-muted">Clients</div>
+            </div>
+            <div class="glass-glow rounded-xl p-5 text-center">
+              <div class="stat-number text-3xl font-bold text-accent mb-1" data-target="5">0+</div>
+              <div class="text-sm text-muted">Years</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right - 3D Holographic Cube -->
+        <div class="reveal-right flex items-center justify-center">
+          <canvas id="about-canvas" class="w-full max-w-lg"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== SERVICES SECTION ===== -->
+  <section id="services" class="relative py-28 lg:py-36 overflow-hidden">
+    <!-- 3D Floating Geometry Background -->
+    <canvas id="services-canvas" class="section-canvas"></canvas>
+    <div class="grid-bg absolute inset-0"></div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <!-- Header -->
+      <div class="text-center mb-20">
+        <div class="section-badge reveal">What We Do</div>
+        <h2 class="section-heading section-heading-animate text-4xl md:text-5xl font-bold mb-5 tracking-tight">
+          Our <span class="gradient-text">Services</span>
+        </h2>
+        <p class="text-muted max-w-xl mx-auto reveal">
+          End-to-end technology solutions that drive growth and innovation.
+        </p>
+      </div>
+
+      <!-- Service Cards Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Service 1 -->
+        <div class="service-card tilt-card glass-glow rounded-2xl p-8 cursor-none relative">
+          <div class="card-spotlight-effect absolute w-[300px] h-[300px] bg-accent/5 rounded-full blur-3xl pointer-events-none opacity-0 transition-opacity" style="transform: translate(-50%, -50%);"></div>
+          <div class="card-content relative z-10">
+            <div class="service-icon mb-6">
+              <svg class="w-7 h-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-white">Web Application Development</h3>
+            <p class="text-muted text-sm leading-relaxed">Building robust, scalable web applications with modern frameworks and best practices for optimal performance.</p>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card tilt-card glass-glow rounded-2xl p-8 cursor-none relative">
+          <div class="card-spotlight-effect absolute w-[300px] h-[300px] bg-accent/5 rounded-full blur-3xl pointer-events-none opacity-0 transition-opacity" style="transform: translate(-50%, -50%);"></div>
+          <div class="card-content relative z-10">
+            <div class="service-icon mb-6">
+              <svg class="w-7 h-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-white">SaaS Platform Development</h3>
+            <p class="text-muted text-sm leading-relaxed">Creating multi-tenant SaaS platforms with subscription management, analytics, and seamless user experiences.</p>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card tilt-card glass-glow rounded-2xl p-8 cursor-none relative">
+          <div class="card-spotlight-effect absolute w-[300px] h-[300px] bg-accent/5 rounded-full blur-3xl pointer-events-none opacity-0 transition-opacity" style="transform: translate(-50%, -50%);"></div>
+          <div class="card-content relative z-10">
+            <div class="service-icon mb-6">
+              <svg class="w-7 h-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-white">AI & Automation Systems</h3>
+            <p class="text-muted text-sm leading-relaxed">Developing intelligent automation solutions powered by machine learning and artificial intelligence technologies.</p>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card tilt-card glass-glow rounded-2xl p-8 cursor-none relative">
+          <div class="card-spotlight-effect absolute w-[300px] h-[300px] bg-accent/5 rounded-full blur-3xl pointer-events-none opacity-0 transition-opacity" style="transform: translate(-50%, -50%);"></div>
+          <div class="card-content relative z-10">
+            <div class="service-icon mb-6">
+              <svg class="w-7 h-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-white">API Development</h3>
+            <p class="text-muted text-sm leading-relaxed">Designing and building RESTful and GraphQL APIs that are secure, well-documented, and developer-friendly.</p>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card tilt-card glass-glow rounded-2xl p-8 cursor-none relative">
+          <div class="card-spotlight-effect absolute w-[300px] h-[300px] bg-accent/5 rounded-full blur-3xl pointer-events-none opacity-0 transition-opacity" style="transform: translate(-50%, -50%);"></div>
+          <div class="card-content relative z-10">
+            <div class="service-icon mb-6">
+              <svg class="w-7 h-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-white">Cloud Infrastructure</h3>
+            <p class="text-muted text-sm leading-relaxed">Setting up and managing cloud infrastructure on AWS, with CI/CD pipelines, monitoring, and auto-scaling.</p>
+          </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card tilt-card glass-glow rounded-2xl p-8 cursor-none relative">
+          <div class="card-spotlight-effect absolute w-[300px] h-[300px] bg-accent/5 rounded-full blur-3xl pointer-events-none opacity-0 transition-opacity" style="transform: translate(-50%, -50%);"></div>
+          <div class="card-content relative z-10">
+            <div class="service-icon mb-6">
+              <svg class="w-7 h-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-white">UI / UX Design</h3>
+            <p class="text-muted text-sm leading-relaxed">Crafting intuitive, beautiful interfaces with user-centered design principles and modern design systems.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== TECHNOLOGIES SECTION ===== -->
+  <section id="technologies" class="relative py-28 lg:py-36 overflow-hidden">
+    <!-- Orbital Ring Background -->
+    <canvas id="tech-canvas" class="section-canvas"></canvas>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <!-- Header -->
+      <div class="text-center mb-20">
+        <div class="section-badge reveal">Tech Stack</div>
+        <h2 class="section-heading section-heading-animate text-4xl md:text-5xl font-bold mb-5 tracking-tight">
+          <span class="gradient-text">Technologies</span> We Use
+        </h2>
+        <p class="text-muted max-w-xl mx-auto reveal">
+          We leverage the latest and most reliable technologies to build world-class solutions.
+        </p>
+      </div>
+
+      <!-- Tech Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+
+        <!-- Laravel -->
+        <div class="tech-card glass-glow rounded-2xl p-6 flex flex-col items-center gap-4 text-center">
+          <div class="tech-icon w-16 h-16 flex items-center justify-center">
+            <svg viewBox="0 0 50 52" class="w-12 h-12" fill="none">
+              <path d="M49.626 11.564a.809.809 0 01.028.209v10.972a.8.8 0 01-.402.694l-9.209 5.302V39.25c0 .286-.152.55-.4.694L20.42 51.01c-.044.025-.092.041-.14.058-.018.006-.035.017-.054.022a.805.805 0 01-.41 0c-.022-.006-.042-.018-.063-.026-.044-.016-.09-.03-.132-.054L.402 39.944A.801.801 0 010 39.25V6.334c0-.072.01-.142.028-.21.006-.023.02-.044.028-.067.015-.042.029-.085.051-.124.015-.026.037-.047.055-.071.023-.032.044-.065.071-.093.02-.02.047-.033.071-.05.03-.024.056-.052.088-.072h.001L9.817.376a.802.802 0 01.8 0l9.426 5.427h.001c.032.02.058.048.087.072.025.017.051.03.072.05.027.028.047.061.07.093.018.024.04.045.056.071.022.04.035.082.05.124.01.023.022.044.029.068a.82.82 0 01.027.209v20.559l8.026-4.62V11.79c0-.07.01-.141.027-.209.008-.024.02-.045.028-.068.016-.042.03-.085.052-.124.015-.026.036-.047.055-.071.023-.032.044-.065.07-.093.02-.02.048-.033.072-.05.03-.025.056-.053.088-.073h.002l9.425-5.426a.802.802 0 01.8 0l9.426 5.426c.033.02.059.048.088.073.024.017.051.03.071.05.028.028.048.06.071.093.018.024.04.045.055.071.023.04.036.082.052.124.008.023.02.045.028.068zm-1.574 10.718V12.9l-3.37 1.94-4.656 2.68v9.382l8.026-4.62zm-9.425 16.18V29.08l-4.58 2.618-12.87 7.356v9.464l17.45-10.056zM1.602 7.462v31.508L19.05 49.012v-9.465L9.832 33.976l-.002-.001-.001-.001c-.031-.019-.057-.046-.086-.071-.024-.018-.05-.032-.07-.052-.028-.028-.047-.063-.069-.095-.016-.024-.038-.044-.053-.07-.022-.042-.034-.088-.049-.132-.007-.02-.02-.04-.025-.062a.812.812 0 01-.028-.21V12.9L5.973 10.22l-3.37-1.94v-.818zm8.616-5.88L2.193 5.999l8.024 4.62 8.025-4.62-8.024-4.418zm4.315 28.344l4.656-2.68V7.462l-3.37 1.94-4.656 2.68v19.784l3.37-1.94zm19.07-17.29l-8.024 4.418 8.024 4.62 8.025-4.62-8.024-4.418zm-.401 10.423l-4.656-2.68-3.37-1.94v9.382l4.656 2.68 3.37 1.94v-9.382zm-17.851 15.14l11.647-6.657 5.801-3.315-8.017-4.617-9.43 5.428-8.026 4.62 8.025 4.541z" fill="#FF2D20"/>
+            </svg>
+          </div>
+          <span class="text-sm font-medium text-muted">Laravel</span>
+        </div>
+
+        <!-- Angular -->
+        <div class="tech-card glass-glow rounded-2xl p-6 flex flex-col items-center gap-4 text-center">
+          <div class="tech-icon w-16 h-16 flex items-center justify-center">
+            <svg viewBox="0 0 48 48" class="w-12 h-12" fill="none">
+              <path d="M24 4L4 12l3.1 26.4L24 46l16.9-7.6L44 12L24 4z" fill="#DD0031"/>
+              <path d="M24 4v4.2V4v38.1l.1 3.9L44 12L24 4z" fill="#C3002F"/>
+              <path d="M24 8.2L11.9 35.5h4.5l2.4-6.1h10.3l2.4 6.1h4.5L24 8.2zm3.6 17.2h-7.2L24 16.7l3.6 8.7z" fill="white"/>
+            </svg>
+          </div>
+          <span class="text-sm font-medium text-muted">Angular</span>
+        </div>
+
+        <!-- Node.js -->
+        <div class="tech-card glass-glow rounded-2xl p-6 flex flex-col items-center gap-4 text-center">
+          <div class="tech-icon w-16 h-16 flex items-center justify-center">
+            <svg viewBox="0 0 48 48" class="w-12 h-12" fill="none">
+              <path d="M24 4c-.6 0-1.2.2-1.8.5L7.4 13c-1.1.6-1.8 1.8-1.8 3.1v17.8c0 1.3.7 2.5 1.8 3.1l14.8 8.5c1.1.6 2.5.6 3.6 0l14.8-8.5c1.1-.6 1.8-1.8 1.8-3.1V16.1c0-1.3-.7-2.5-1.8-3.1L25.8 4.5c-.6-.3-1.2-.5-1.8-.5z" fill="#339933"/>
+              <path d="M24 22c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm0 8.5c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5z" fill="white"/>
+              <text x="17" y="20" font-size="10" font-weight="bold" fill="white" font-family="Arial">N</text>
+            </svg>
+          </div>
+          <span class="text-sm font-medium text-muted">Node.js</span>
+        </div>
+
+        <!-- Python -->
+        <div class="tech-card glass-glow rounded-2xl p-6 flex flex-col items-center gap-4 text-center">
+          <div class="tech-icon w-16 h-16 flex items-center justify-center">
+            <svg viewBox="0 0 48 48" class="w-12 h-12" fill="none">
+              <path d="M24 4c-5.5 0-5.2 2.4-5.2 2.4v4.9h10.5v1.5H13.8S8 12.2 8 19.8c0 7.6 5.1 7.3 5.1 7.3h3V22c0-3.4 2.9-6.4 6.4-6.4h10c3 0 5.5-2.5 5.5-5.5V5.5C38 2.8 33 4 33 4s-3.5-1-9-1zm-5.5 2.5c.9 0 1.6.7 1.6 1.6s-.7 1.6-1.6 1.6-1.6-.7-1.6-1.6.7-1.6 1.6-1.6z" fill="#3776AB"/>
+              <path d="M24 44c5.5 0 5.2-2.4 5.2-2.4v-4.9H18.7v-1.5h15.5S40 35.8 40 28.2c0-7.6-5.1-7.3-5.1-7.3h-3V26c0 3.4-2.9 6.4-6.4 6.4h-10c-3 0-5.5 2.5-5.5 5.5v4.6C10 45.2 15 44 15 44s3.5 1 9 1zm5.5-2.5c-.9 0-1.6-.7-1.6-1.6s.7-1.6 1.6-1.6 1.6.7 1.6 1.6-.7 1.6-1.6 1.6z" fill="#FFD43B"/>
+            </svg>
+          </div>
+          <span class="text-sm font-medium text-muted">Python</span>
+        </div>
+
+        <!-- Docker -->
+        <div class="tech-card glass-glow rounded-2xl p-6 flex flex-col items-center gap-4 text-center">
+          <div class="tech-icon w-16 h-16 flex items-center justify-center">
+            <svg viewBox="0 0 48 48" class="w-12 h-12" fill="none">
+              <path d="M27 18h-4v-4h4v4zm0-10h-4v4h4V8zm5 6h-4v4h4v-4zm-10 0h-4v4h4v-4zm-5 0h-4v4h4v-4zm20.2 3.6c-1-1-3.2-1.4-4.9-1-.7-2.3-2.5-3.5-2.5-3.5s-3.2 2.1-3 5.1c-3.6-.2-7.3-.2-11 .1-1.5-3.7-5.1-3.7-5.1-3.7s-3 2.7-1.5 6.2C6.4 22 4 25 4 25c3 8.3 11 9.2 14.8 9.5 5 .5 14.4.2 19.2-4.4C42.1 26 44.7 19.5 37.2 17.6z" fill="#0DB7ED"/>
+              <rect x="12" y="18" width="4" height="4" fill="white" opacity="0.8"/>
+              <rect x="17" y="18" width="4" height="4" fill="white" opacity="0.8"/>
+              <rect x="22" y="18" width="4" height="4" fill="white" opacity="0.8"/>
+              <rect x="27" y="18" width="4" height="4" fill="white" opacity="0.8"/>
+              <rect x="17" y="13" width="4" height="4" fill="white" opacity="0.8"/>
+              <rect x="22" y="13" width="4" height="4" fill="white" opacity="0.8"/>
+              <rect x="27" y="13" width="4" height="4" fill="white" opacity="0.8"/>
+              <rect x="22" y="8" width="4" height="4" fill="white" opacity="0.8"/>
+            </svg>
+          </div>
+          <span class="text-sm font-medium text-muted">Docker</span>
+        </div>
+
+        <!-- AWS -->
+        <div class="tech-card glass-glow rounded-2xl p-6 flex flex-col items-center gap-4 text-center">
+          <div class="tech-icon w-16 h-16 flex items-center justify-center">
+            <svg viewBox="0 0 48 48" class="w-12 h-12" fill="none">
+              <path d="M14.8 26.3c0 .5.1 1 .2 1.4.1.4.3.9.5 1.4.1.2.1.3.1.4 0 .2-.1.3-.3.5l-1.1.7c-.1.1-.3.1-.4.1-.2 0-.3-.1-.5-.3-.2-.3-.4-.5-.5-.8-.1-.3-.3-.6-.5-1-1.3 1.5-2.8 2.3-4.7 2.3-1.3 0-2.4-.4-3.2-1.2-.8-.8-1.2-1.8-1.2-3.1 0-1.4.5-2.5 1.5-3.3 1-.8 2.4-1.3 4.1-1.3.6 0 1.2 0 1.8.1s1.2.2 1.9.4v-1.2c0-1.3-.3-2.2-.8-2.7-.6-.5-1.5-.8-2.9-.8-.6 0-1.3.1-1.9.2-.7.2-1.3.4-1.9.7-.3.1-.5.2-.6.2h-.2c-.2 0-.3-.2-.3-.5v-.9c0-.3 0-.5.1-.6.1-.1.2-.2.5-.3.6-.3 1.4-.6 2.2-.8.9-.2 1.8-.3 2.7-.3 2.1 0 3.6.5 4.6 1.4.9.9 1.4 2.4 1.4 4.3v5.6zm-6.5 2.4c.6 0 1.1-.1 1.7-.3.6-.2 1.1-.6 1.5-1.1.3-.3.4-.7.5-1.1.1-.4.2-.9.2-1.5v-.7c-.5-.1-1-.2-1.5-.3-.5-.1-1-.1-1.5-.1-1.1 0-1.9.2-2.5.7-.6.4-.8 1.1-.8 1.9 0 .8.2 1.3.6 1.7.4.5 1 .7 1.8.7z" fill="#FF9900"/>
+              <path d="M24.2 30.8c-.2 0-.4 0-.5-.2-.1-.1-.2-.3-.3-.6l-3.6-11.7c-.1-.2-.1-.4-.1-.5 0-.2.1-.3.3-.3h1.7c.3 0 .4 0 .5.2.1.1.2.3.3.6l2.6 10.1 2.4-10.1c.1-.3.1-.5.2-.6.1-.1.3-.2.5-.2h1.4c.3 0 .4 0 .5.2.1.1.2.3.2.6l2.4 10.3 2.6-10.3c.1-.3.2-.5.3-.6.1-.1.3-.2.5-.2h1.6c.2 0 .3.1.3.3 0 .1 0 .1 0 .2s0 .2-.1.3l-3.7 11.7c-.1.3-.2.5-.3.6-.1.1-.3.2-.5.2h-1.5c-.3 0-.4 0-.5-.2s-.2-.3-.2-.6l-2.4-9.9-2.3 9.9c-.1.3-.1.5-.2.6-.1.1-.3.2-.5.2h-1.5z" fill="#FF9900"/>
+              <path d="M42.5 31.2c-.9 0-1.7-.1-2.6-.3-.8-.2-1.5-.5-1.9-.8-.3-.2-.4-.4-.5-.5 0-.1-.1-.3-.1-.4v-.9c0-.3.1-.5.3-.5.1 0 .2 0 .3.1.1 0 .2.1.4.2.5.3 1.1.5 1.8.6.7.2 1.3.2 2 .2 1.1 0 1.9-.2 2.4-.6.6-.4.8-.9.8-1.6 0-.5-.1-.9-.4-1.2-.3-.3-.9-.6-1.7-.9l-2.5-.8c-1.2-.4-2.1-1-2.7-1.7-.5-.7-.8-1.5-.8-2.3 0-.7.2-1.3.5-1.8.3-.5.7-1 1.2-1.3.5-.4 1.1-.6 1.7-.8.7-.2 1.3-.3 2.1-.3.4 0 .8 0 1.2.1.4.1.8.1 1.2.2.4.1.7.2 1 .3.3.1.6.2.7.4.2.1.3.2.4.4.1.1.1.3.1.5v.8c0 .3-.1.5-.3.5-.1 0-.3-.1-.5-.2-.8-.4-1.7-.5-2.7-.5-.9 0-1.7.2-2.2.5-.5.3-.7.8-.7 1.5 0 .5.2.9.5 1.2.3.3.9.6 1.8.9l2.5.8c1.2.4 2.1.9 2.6 1.6.5.7.8 1.4.8 2.3 0 .7-.1 1.3-.4 1.9-.3.5-.7 1-1.3 1.4-.5.4-1.2.7-1.9.8-.8.3-1.6.4-2.5.4z" fill="#FF9900"/>
+              <path d="M43.4 37.8c-5.6 4.1-13.6 6.3-20.6 6.3-9.7 0-18.5-3.6-25.1-9.6-.5-.5-.1-1.1.6-.8 7.2 4.2 16 6.7 25.1 6.7 6.2 0 12.9-1.3 19.1-3.9.9-.4 1.7.6.9 1.3z" fill="#FF9900"/>
+              <path d="M45.6 35.3c-.7-.9-4.8-.5-6.6-.2-.6.1-.6-.4-.1-.8 3.2-2.3 8.5-1.6 9.1-.9.6.8-.2 6.2-3.2 8.7-.5.4-.9.2-.7-.3.7-1.7 2.2-5.6 1.5-6.5z" fill="#FF9900"/>
+            </svg>
+          </div>
+          <span class="text-sm font-medium text-muted">AWS</span>
+        </div>
+
+        <!-- MySQL -->
+        <div class="tech-card glass-glow rounded-2xl p-6 flex flex-col items-center gap-4 text-center">
+          <div class="tech-icon w-16 h-16 flex items-center justify-center">
+            <svg viewBox="0 0 48 48" class="w-12 h-12" fill="none">
+              <ellipse cx="24" cy="12" rx="16" ry="6" stroke="#00758F" stroke-width="2" fill="none"/>
+              <path d="M8 12v12c0 3.3 7.2 6 16 6s16-2.7 16-6V12" stroke="#00758F" stroke-width="2" fill="none"/>
+              <path d="M8 24v12c0 3.3 7.2 6 16 6s16-2.7 16-6V24" stroke="#00758F" stroke-width="2" fill="none"/>
+              <ellipse cx="24" cy="24" rx="16" ry="6" stroke="#00758F" stroke-width="1" fill="none" opacity="0.3"/>
+              <text x="14" y="40" font-size="8" font-weight="bold" fill="#00758F" font-family="Arial">SQL</text>
+            </svg>
+          </div>
+          <span class="text-sm font-medium text-muted">MySQL</span>
+        </div>
+
+        <!-- Redis -->
+        <div class="tech-card glass-glow rounded-2xl p-6 flex flex-col items-center gap-4 text-center">
+          <div class="tech-icon w-16 h-16 flex items-center justify-center">
+            <svg viewBox="0 0 48 48" class="w-12 h-12" fill="none">
+              <path d="M44 25.2c-2 1-12.3 5.3-14.5 6.4-2.2 1.2-3.4 1.2-5.1.3-1.7-.8-12.8-5.3-14.8-6.2" stroke="#D82C20" stroke-width="2.5" fill="none"/>
+              <path d="M44 20c-2 1-12.3 5.3-14.5 6.4-2.2 1.2-3.4 1.2-5.1.3-1.7-.8-12.8-5.3-14.8-6.2" stroke="#D82C20" stroke-width="2.5" fill="none"/>
+              <path d="M44 14.8c-2 1-12.3 5.3-14.5 6.4-2.2 1.2-3.4 1.2-5.1.3-1.7-.8-12.8-5.3-14.8-6.2 2-1 12.3-5.3 14.5-6.4 2.2-1.2 3.4-1.2 5.1-.3 1.7.8 12.8 5.3 14.8 6.2z" fill="#D82C20"/>
+              <path d="M22 11l5 2 5-2-5-2-5 2z" fill="white"/>
+              <circle cx="16" cy="14" r="2.5" fill="white"/>
+            </svg>
+          </div>
+          <span class="text-sm font-medium text-muted">Redis</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section id="projects" class="relative py-28 lg:py-36 overflow-hidden">
+    <div class="aurora"></div>
+    <div class="grid-bg absolute inset-0"></div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <!-- Header -->
+      <div class="text-center mb-20">
+        <div class="section-badge reveal">Our Work</div>
+        <h2 class="section-heading section-heading-animate text-4xl md:text-5xl font-bold mb-5 tracking-tight">
+          Featured <span class="gradient-text">Projects</span>
+        </h2>
+        <p class="text-muted max-w-xl mx-auto reveal">
+          A selection of projects we've built for clients across industries.
+        </p>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- Project 1 -->
+        <div class="project-card tilt-card glass-glow rounded-2xl overflow-hidden group">
+          <div class="project-image-area h-56 bg-gradient-to-br from-primary/20 via-accent/5 to-dark-light flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(111,160,187,0.12),transparent_70%)]"></div>
+            <div class="relative z-10 text-center">
+              <div class="w-16 h-16 mx-auto mb-3 rounded-2xl bg-primary/15 backdrop-blur-sm border border-primary/20 flex items-center justify-center">
+                <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+              </div>
+              <span class="text-xs text-muted/60 uppercase tracking-widest">SaaS Platform</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-semibold mb-2 text-white group-hover:text-accent transition-colors duration-500">Enterprise SaaS Platform</h3>
+            <p class="text-muted text-sm leading-relaxed mb-4">A multi-tenant enterprise SaaS platform with advanced analytics, role-based access control, and real-time collaboration features.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs px-3 py-1 rounded-full bg-primary/8 text-primary/80 border border-primary/15">Laravel</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-primary/8 text-primary/80 border border-primary/15">Angular</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-primary/8 text-primary/80 border border-primary/15">AWS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card tilt-card glass-glow rounded-2xl overflow-hidden group">
+          <div class="project-image-area h-56 bg-gradient-to-br from-accent/20 via-primary/5 to-dark-light flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(0,212,255,0.1),transparent_70%)]"></div>
+            <div class="relative z-10 text-center">
+              <div class="w-16 h-16 mx-auto mb-3 rounded-2xl bg-accent/15 backdrop-blur-sm border border-accent/20 flex items-center justify-center">
+                <svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <span class="text-xs text-muted/60 uppercase tracking-widest">AI System</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-semibold mb-2 text-white group-hover:text-accent transition-colors duration-500">AI Customer Support System</h3>
+            <p class="text-muted text-sm leading-relaxed mb-4">An intelligent customer support system powered by NLP and machine learning, handling thousands of queries with automated responses.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs px-3 py-1 rounded-full bg-primary/8 text-primary/80 border border-primary/15">Python</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-primary/8 text-primary/80 border border-primary/15">Node.js</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-primary/8 text-primary/80 border border-primary/15">Redis</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card tilt-card glass-glow rounded-2xl overflow-hidden group">
+          <div class="project-image-area h-56 bg-gradient-to-br from-secondary/20 via-accent/5 to-dark-light flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_40%_60%,rgba(79,127,154,0.12),transparent_70%)]"></div>
+            <div class="relative z-10 text-center">
+              <div class="w-16 h-16 mx-auto mb-3 rounded-2xl bg-secondary/15 backdrop-blur-sm border border-secondary/20 flex items-center justify-center">
+                <svg class="w-8 h-8 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              </div>
+              <span class="text-xs text-muted/60 uppercase tracking-widest">Insurance Platform</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-semibold mb-2 text-white group-hover:text-accent transition-colors duration-500">Insurance Management Platform</h3>
+            <p class="text-muted text-sm leading-relaxed mb-4">A comprehensive insurance management system with policy tracking, claims processing, and automated underwriting workflows.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs px-3 py-1 rounded-full bg-primary/8 text-primary/80 border border-primary/15">Laravel</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-primary/8 text-primary/80 border border-primary/15">MySQL</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-primary/8 text-primary/80 border border-primary/15">Docker</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card tilt-card glass-glow rounded-2xl overflow-hidden group">
+          <div class="project-image-area h-56 bg-gradient-to-br from-primary/15 via-secondary/5 to-dark-light flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_60%_50%,rgba(111,160,187,0.1),transparent_70%)]"></div>
+            <div class="relative z-10 text-center">
+              <div class="w-16 h-16 mx-auto mb-3 rounded-2xl bg-primary/15 backdrop-blur-sm border border-primary/20 flex items-center justify-center">
+                <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+              </div>
+              <span class="text-xs text-muted/60 uppercase tracking-widest">Analytics</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-semibold mb-2 text-white group-hover:text-accent transition-colors duration-500">Analytics Dashboard</h3>
+            <p class="text-muted text-sm leading-relaxed mb-4">A real-time analytics dashboard with interactive charts, custom reports, data export capabilities, and executive summaries.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs px-3 py-1 rounded-full bg-primary/8 text-primary/80 border border-primary/15">Angular</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-primary/8 text-primary/80 border border-primary/15">Node.js</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-primary/8 text-primary/80 border border-primary/15">AWS</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="relative py-28 lg:py-36 overflow-hidden">
+    <div class="aurora"></div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <!-- Header -->
+      <div class="text-center mb-20">
+        <div class="section-badge reveal">Get In Touch</div>
+        <h2 class="section-heading section-heading-animate text-4xl md:text-5xl font-bold mb-5 tracking-tight">
+          Let's <span class="gradient-text">Connect</span>
+        </h2>
+        <p class="text-muted max-w-xl mx-auto reveal">
+          Ready to start your next project? Reach out to us.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-16">
+        <!-- Contact Info -->
+        <div class="reveal-left">
+          <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+          <p class="text-muted mb-10 leading-relaxed">
+            Have a project in mind? Let's discuss how we can help you achieve your goals with the right technology solutions.
+          </p>
+
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 glass-glow rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div>
+                <p class="text-sm text-muted">Email</p>
+                <p class="text-white">jerinpjpositive@gmail.com</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 glass-glow rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <div>
+                <p class="text-sm text-muted">Phone</p>
+                <p class="text-white">+91 9744004523</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 glass-glow rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div>
+                <p class="text-sm text-muted">Location</p>
+                <p class="text-white">Thrissur, Kerala</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="mt-10">
+            <p class="text-sm text-muted mb-4">Follow us</p>
+            <div class="flex gap-3">
+              <a href="#" class="social-icon" aria-label="LinkedIn">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="Twitter">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="GitHub">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="reveal-right">
+          <form id="contact-form" class="glass-strong rounded-2xl p-8 lg:p-10">
+            <div class="space-y-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-muted mb-2">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Your full name" class="form-input">
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-muted mb-2">Email</label>
+                <input type="email" id="email" name="email" required placeholder="your@email.com" class="form-input">
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-medium text-muted mb-2">Phone</label>
+                <div class="flex gap-3">
+                  <!-- Custom Country Code Picker -->
+                  <div class="country-picker shrink-0" id="country-picker">
+                    <input type="hidden" id="country-code" name="country_code" value="+91">
+                    <button type="button" class="country-picker-btn form-input" id="country-picker-btn">
+                      <img src="https://flagcdn.com/w40/in.png" alt="IN" class="country-flag" id="selected-flag">
+                      <span id="selected-code">+91</span>
+                      <svg class="country-picker-arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="#A0A0A0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="country-dropdown hidden" id="country-dropdown">
+                      <div class="country-search-wrap">
+                        <input type="text" class="country-search" id="country-search" placeholder="Search country..." autocomplete="off">
+                      </div>
+                      <ul class="country-list" id="country-list"></ul>
+                    </div>
+                  </div>
+                  <!-- End Country Code Picker -->
+                  <input type="tel" id="phone" name="phone" required placeholder="Your phone number" class="form-input flex-1">
+                </div>
+              </div>
+              <div>
+                <label for="message" class="block text-sm font-medium text-muted mb-2">Message</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project..." class="form-input resize-none"></textarea>
+              </div>
+              <button type="submit" class="btn-primary w-full justify-center">
+                <span>Send Message</span>
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer" class="relative border-t border-white/5 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+
+        <!-- Company Info -->
+        <div class="lg:col-span-1">
+          <a href="#hero" class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center text-white font-bold text-sm" style="transform: rotate(-5deg);">
+              BT
+            </div>
+            <span class="text-lg font-semibold text-white">
+              Brillix <span class="text-primary">Tech</span>
+            </span>
+          </a>
+          <p class="text-muted text-sm leading-relaxed mb-3">
+            Seamless Data, Brilliant Outcomes
+          </p>
+          <p class="text-muted/50 text-sm leading-relaxed">
+            Building the future of technology, one solution at a time.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-5">Quick Links</h4>
+          <div class="space-y-3">
+            <a href="#hero" class="footer-link block">Home</a>
+            <a href="#about" class="footer-link block">About</a>
+            <a href="#services" class="footer-link block">Services</a>
+            <a href="blog.html" class="footer-link block">Blog</a>
+            <a href="case-studies.html" class="footer-link block">Case Studies</a>
+            <a href="careers.html" class="footer-link block">Careers</a>
+            <a href="#contact" class="footer-link block">Contact</a>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-5">Services</h4>
+          <div class="space-y-3">
+            <a href="#services" class="footer-link block">Web Development</a>
+            <a href="#services" class="footer-link block">SaaS Platforms</a>
+            <a href="#services" class="footer-link block">AI & Automation</a>
+            <a href="#services" class="footer-link block">Cloud Infrastructure</a>
+            <a href="#services" class="footer-link block">UI / UX Design</a>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-5">Contact</h4>
+          <div class="space-y-3">
+            <p class="footer-link">jerinpjpositive@gmail.com</p>
+            <p class="footer-link">+91 9744004523</p>
+            <p class="footer-link">Thrissur, Kerala</p>
+          </div>
+          <div class="flex gap-3 mt-6">
+            <a href="#" class="social-icon" aria-label="LinkedIn">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Twitter">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="GitHub">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Legal Links -->
+      <div class="border-t border-white/5 pt-8 mb-6 flex flex-wrap items-center justify-center gap-6">
+        <a href="privacy-policy.html" class="footer-link text-sm">Privacy Policy</a>
+        <a href="terms.html" class="footer-link text-sm">Terms of Service</a>
+        <a href="cookies.html" class="footer-link text-sm">Cookie Policy</a>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-muted/50 text-sm">
+          &copy; 2026 Brillix Technologies. All rights reserved.
+        </p>
+        <p class="text-muted/30 text-sm">
+          Seamless Data, Brilliant Outcomes
+        </p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ===== TOAST ===== -->
+  <div id="toast" class="hidden">
+    Message sent successfully!
+  </div>
+
+
+  <!-- ===== SCRIPTS ===== -->
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- App Scripts -->
+  <script src="js/three-scene.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

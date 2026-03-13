@@ -1,0 +1,6 @@
+# Brillix Technologies — robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://brillixtechnologies.com/sitemap.xml

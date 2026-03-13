@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#0B0F14"/>
+  <rect x="40" y="40" width="1120" height="550" rx="24" fill="#111820" stroke="#6FA0BB" stroke-width="1" stroke-opacity="0.2"/>
+  <!-- BT Logo -->
+  <rect x="500" y="160" width="80" height="80" rx="20" fill="#6FA0BB" transform="rotate(-5 540 200)"/>
+  <text x="515" y="213" font-family="Arial, sans-serif" font-weight="bold" font-size="38" fill="#FFFFFF" letter-spacing="1">BT</text>
+  <!-- Company Name -->
+  <text x="600" y="310" font-family="Arial, sans-serif" font-weight="700" font-size="48" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">Brillix Technologies</text>
+  <!-- Tagline -->
+  <text x="600" y="360" font-family="Arial, sans-serif" font-weight="400" font-size="22" fill="#6FA0BB" text-anchor="middle" letter-spacing="1">Seamless Data, Brilliant Outcomes</text>
+  <!-- Description -->
+  <text x="600" y="420" font-family="Arial, sans-serif" font-weight="400" font-size="16" fill="#A0A0A0" text-anchor="middle">Modern Web Platforms · SaaS Products · AI Solutions · Enterprise Digital Solutions</text>
+  <!-- Accent line -->
+  <rect x="480" y="450" width="240" height="2" rx="1" fill="#00D4FF" opacity="0.6"/>
+  <!-- Website URL -->
+  <text x="600" y="500" font-family="Arial, sans-serif" font-weight="500" font-size="16" fill="#6FA0BB" text-anchor="middle">brillixtechnologies.com</text>
+</svg>
