@@ -1,0 +1,36 @@
+# Brillix Technologies
+
+> Brillix Technologies builds modern web platforms, scalable SaaS products, AI solutions, and enterprise digital systems from Thrissur, Kerala.
+
+## About
+
+Brillix Technologies is a forward-thinking technology company focused on building scalable software systems, AI powered solutions, modern SaaS platforms, and high-performance web applications. We combine cutting-edge technology with deep industry expertise to deliver solutions that transform businesses.
+
+## Services
+
+- Web Application Development
+- SaaS Platform Development
+- AI & Automation Systems
+- API Development
+- Cloud Infrastructure
+- UI / UX Design
+
+## Technologies
+
+Laravel, Angular, Node.js, Python, Docker, AWS, MySQL, Redis
+
+## Links
+
+- Website: https://brillixtechnologies.com
+- Blog: https://brillixtechnologies.com/blog.html
+- Careers: https://brillixtechnologies.com/careers.html
+- Case Studies: https://brillixtechnologies.com/case-studies.html
+- Privacy Policy: https://brillixtechnologies.com/privacy-policy.html
+- Terms of Service: https://brillixtechnologies.com/terms.html
+
+## Contact
+
+- Phone: +91 9744004523
+- Location: Thrissur, Kerala, India
+- LinkedIn: https://www.linkedin.com/company/brillix-technologies
+- Twitter: https://twitter.com/brillixtech
